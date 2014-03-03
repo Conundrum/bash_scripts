@@ -90,3 +90,11 @@ case "$1" in
 	echo $"Usage: $0 {start|stop|status|restart}"
 esac
 exit 0
+
+
+
+#. /home/appldev/start_stop.env
+#sh /DEV/oracle/devappl/mwa/11.5.0/bin/mwactl.sh start 2323 &
+#cd /DEV/oracle/devappl/mwa/11.5.0/bin/
+#sh mwactl.sh start_dispatcher &
+
