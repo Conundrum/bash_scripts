@@ -50,7 +50,11 @@ if [ ! -f $DAC_HOME/config.sh ] ; then
 	echo -n "**config.sh file not found at $DAC_HOME/config.sh"
 	echo_failure
 	echo ''
+else
+	# source the config.sh file
+	. $DAC_HOME/config.sh
 fi
+
 
 if [ ! -f $DAC_HOME/startserver.sh ] ; then
 	echo ''
@@ -65,8 +69,6 @@ if [ ! -f $DAC_HOME/stopserver.sh ] ; then
 	echo ''
 fi
 
-#source the config.sh script
-. $DAC_HOME/config.sh
 
 
 check_permissions() {
