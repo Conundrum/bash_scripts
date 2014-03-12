@@ -36,6 +36,7 @@ INFO_STOP_TIMEOUT=300
 LOCK_FILE='var/lock/subsys/'$SUBSYS
 START_LOG=$LOG_PATH/$SUBSYS-start.log
 STOP_LOG=$LOG_PATH/$SUBSYS-stop.log
+LSOF_PATH=/usr/sbin/lsof
 # source the functions library
 #-----------------------
 if [ -f /etc/rc.d/init.d/functions ]; then
@@ -44,9 +45,9 @@ fi
 #-----------------------
 
 # check paths and permissions
-if [ ! -f '$INFOSERVICE/infraservice.sh' ] ; then
+if [ ! -f $INFOSERVICE/infaservice.sh ] ; then
 	echo ''
-	echo -n '**infaservice.sh file not found at $INFOSERVICE/infraservice.sh'
+	echo -n "**infaservice.sh file not found at $INFOSERVICE/infraservice.sh"
 	echo_failure
 	echo ''
 fi
@@ -105,7 +106,7 @@ check_permissions() {
 			abort=1
 		fi
 	else
-		if [! -w $STOP_LOG ]; then
+		if [ ! -w $STOP_LOG ]; then
 			echo ''
 			echo '** Log file '$STOP_LOG' is not writable by '$(whoami)' **'
 			echo_failure
@@ -169,7 +170,7 @@ status () {
 }
 
 
-case $i in
+case $1 in
 	status)
 		status
 	;;
