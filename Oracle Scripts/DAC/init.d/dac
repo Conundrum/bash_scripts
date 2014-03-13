@@ -23,7 +23,7 @@
 #
 
 # full path to the infaservice.sh file
-DAC_HOME=/APPS/dac
+DAC_HOME=DAC_HOME
 # log file path, change if you don't want logs to go to /var/log
 LOG_PATH=/var/log
 
