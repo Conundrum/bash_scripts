@@ -299,13 +299,13 @@ echo_in_progress() {
 
 start() {
 	echo -en "\nStarting DAC Server"
-	su $ORACLE_OWNR -c "$JAVA -server -Xms256m -Xmx800m -cp $DACCLASSPATH com.siebel.etl.net.QServer" > $START_LOG 2>&1 &
+	su $ORACLE_OWNR -c "cd $DAC_HOME; $JAVA -server -Xms256m -Xmx800m -cp $DACCLASSPATH com.siebel.etl.net.QServer" > $START_LOG 2>&1 &
 	wait_to_start $DAC_FINGERPRINT $START_TIMEOUT
 }
 
 stop () {
 	echo -en "\nStopping DAC Server"
-	su $ORACLE_OWNR -c "$JAVA -cp $DACCLASSPATH com.siebel.etl.bootup.DAWUtils TERMINATE" > $STOP_LOG 2>&1 &
+	su $ORACLE_OWNR -c "cd $DAC_HOME; $JAVA -cp $DACCLASSPATH com.siebel.etl.bootup.DAWUtils TERMINATE" > $STOP_LOG 2>&1 &
 	wait_to_die $DAC_FINGERPRINT $STOP_TIMEOUT
 }
 
