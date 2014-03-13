@@ -1,9 +1,9 @@
 #!/bin/bash
 # chkconfig: 345 96 20
-# description: Control infamatica process
+# description: Control dac process
 #
-# File: /etc/init.d/informatica
-# Purpose: Start and stop the Informatica server
+# File: /etc/init.d/dac
+# Purpose: Start and stop the DAC server
 # Author: bthompso (Conundrum)
 # Date: 3/11/2014
 #
