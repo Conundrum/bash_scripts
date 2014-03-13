@@ -52,7 +52,7 @@ if [ ! -f $DAC_HOME/config.sh ] ; then
 	echo ''
 else
 	# source the config.sh file
-	. $DAC_HOME/config.sh
+	cd $DAC_HOME; . ./config.sh
 fi
 
 
